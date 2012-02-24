@@ -4,14 +4,12 @@ require "rvmbs/version"
 
 Gem::Specification.new do |s|
   s.name        = "rvmbs"
-  s.version     = Rvmbs::VERSION
+  s.version     = RVMBS::VERSION
   s.authors     = ["Jorge Luis Pérez"]
   s.email       = ["jolisper@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "http://github.com/jolisper/rvmbs"
   s.summary     = %q{RVM Bootstrap}
-  s.description = %q{Command to create a directory with an .rvmrc included}
-
-  s.rubyforge_project = "rvmbs"
+  s.description = %q{Command to create a project directory with a configured .rvmrc file.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
