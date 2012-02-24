@@ -1,7 +1,7 @@
 RVM Bootstrap
 =============
 
-Command to create a directory project with a configured .rvmrc into it.
+Command to create a directory project with a configured .rvmrc into.
 
 Installation
 -----------
