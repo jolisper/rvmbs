@@ -76,7 +76,6 @@ module RVMBS
 
     # Run rvm rvmrc trust command detached from console.
     def self.set_rvmrc_trusted(options, current_dir)
-      current_dir = 
       pid = fork do
         if RUBY_VERSION < "1.9"
           exit if fork
