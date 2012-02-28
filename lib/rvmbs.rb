@@ -13,7 +13,10 @@ module RVMBS
 
       optparse = OptionParser.new do |opts|
         optsp = opts
-        opts.banner = "Usage: rvmbs [options] PROJECT_NAME"
+        opts.banner = "RVM Bootstrap - Command to create a project directory with a configured .rvmrc into.
+
+Usage: rvmbs [options] PROJECT_NAME
+        "
         
         # This define the directory name.
         opts.on('-d', '--directory NAME', "The name of the project's directory.") do |name|

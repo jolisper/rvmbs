@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["jolisper@gmail.com"]
   s.homepage    = "http://github.com/jolisper/rvmbs"
   s.summary     = %q{RVM Bootstrap}
-  s.description = %q{Command to create a project directory with a configured .rvmrc into.}
+  s.description = %q{RVM Bootstrap - Command to create a project directory with a configured .rvmrc into.}
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
