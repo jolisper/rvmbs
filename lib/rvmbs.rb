@@ -29,7 +29,7 @@ Usage: rvmbs [options] PROJECT_NAME
           options[:ruby] = name
         end
 
-        # This define the ruby interpreter.
+        # This force to delete de directory if already exists. 
         options[:force] = false
         opts.on('-f', '--force', "Delete directory if already exists.") do 
           options[:force] = true
