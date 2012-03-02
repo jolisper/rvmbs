@@ -3,6 +3,12 @@ RVM Bootstrap
 
 Command to create a directory project with a configured .rvmrc into.
 
+Requirements
+------------
+
+Just RVM installed.
+
+
 Installation
 -----------
 
