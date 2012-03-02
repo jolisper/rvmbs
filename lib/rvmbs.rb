@@ -35,7 +35,13 @@ Usage: rvmbs [options] PROJECT_NAME
           options[:force] = true
         end
 
-       # This will print an options summary.
+        # Verbose mode 
+        options[:verbose] = false
+        opts.on('-v', '--verbose', "Print extra info.") do 
+          options[:verbose] = true
+        end
+
+      # This will print an options summary.
         opts.on_tail("-h", "--help", "Show this message.") do
           puts opts
           exit
@@ -56,6 +62,7 @@ Usage: rvmbs [options] PROJECT_NAME
 
     # Creates the directory.
     def self.create_directory(options)
+      puts "Making new directory: #{options[:directory]}" if options[:verbose]
       begin
         Dir.mkdir options[:directory]
       rescue 
@@ -70,6 +77,7 @@ Usage: rvmbs [options] PROJECT_NAME
   
     # Creates the .rvmrc file.
     def self.create_rvmrc(options)  
+      puts "Creating rvmrc file" if options[:verbose]
       Dir.chdir(options[:directory])
       File.open(".rvmrc", "w") do |f|
         f.write("rvm use --create #{options[:ruby]}@#{options[:directory]}\n")
@@ -79,6 +87,7 @@ Usage: rvmbs [options] PROJECT_NAME
 
     # Run rvm rvmrc trust command detached from console.
     def self.set_rvmrc_trusted(options, current_dir)
+      puts "Setting rvmrc file to trusted" if options[:verbose]
       pid = fork do
         if RUBY_VERSION < "1.9"
           exit if fork
