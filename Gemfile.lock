@@ -1,14 +1,24 @@
 PATH
   remote: .
   specs:
-    rvmbs (0.0.1)
+    rvmbs (0.0.2)
 
 GEM
   remote: http://rubygems.org/
   specs:
+    gem-man (0.3.0)
+    hpricot (0.8.6)
+    mustache (0.99.4)
+    rdiscount (1.6.8)
+    ronn (0.7.3)
+      hpricot (>= 0.8.2)
+      mustache (>= 0.7.0)
+      rdiscount (>= 1.5.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  gem-man
+  ronn
   rvmbs!

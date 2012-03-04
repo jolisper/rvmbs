@@ -23,13 +23,13 @@ Generates a my_project directory with a trusted .rvmrc file contains:
     
     rvm use --create 1.9.2@my_project
   
-Run `rvmbs --help` for more options.
+Run `rvmbs --help` or `gem man rvmbs` for more options.
 
 To Do
 -----
 
 * Add tests. 
-* Bundler integration. 
+* Bundler integration.
 
 Copyright
 ---------
