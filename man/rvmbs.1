@@ -1,0 +1,41 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "RVMBS" "1" "March 2012" "" ""
+.
+.SH "NAME"
+\fBrvmbs\fR \- RVM Bootstrap \- Command to create a project directory with a configured \.rvmrc into\.
+.
+.SH "SYNOPSIS"
+\fBrmvbs\fR \fB\-d\fR|\fB\-\-directory\fR \fIdirectory_name\fR \fB\-i\fR|\fB\-\-implementation\fR \fIruby_implementation\fR \fB\-f\fR|\fB\-\-force\fR \fB\-v\fR|\fB\-\-verbose\fR
+.
+.SH "DESCRIPTION"
+\fBrvmbs\fR is a simple command\-line tool for creating ruby project directorys with a basic rvm configuration\. By default (without any parameters) create and \.rvmrc file in the current directory with the 1\.9\.2 implementationr and a gemset named equal to de current directory name\. The \.rvmrc file is also trusted\.
+.
+.SH "OPTIONS"
+.
+.IP "\(bu" 4
+\fB\-d\fR, \fB\-\-directory\fR Directory name of the project\.
+.
+.IP "\(bu" 4
+\fB\-i\fR, \fB\-\-implementation\fR The ruby implementation name, e\.g\., 1\.9\.2, jruby
+.
+.IP "\(bu" 4
+\fB\-f\fR, \fB\-\-force\fR Delete directory if already exist\.
+.
+.IP "\(bu" 4
+\fB\-v\fR, \fB\-\-verbose\fR Prints extra info\.
+.
+.IP "" 0
+.
+.SH "EXAMPLES"
+Create a directory \'hello_world\' and a gemset named \'hello_world\' with implementation MRI 1\.9\.2 (default)
+.
+.P
+$ rvmbs \-d hello_world
+.
+.P
+Create a directory \'dog\' and a gemset named \'dog\' with implementation jruby
+.
+.P
+$ rvmbs \-d dog \-i jruby

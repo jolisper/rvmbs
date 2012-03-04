@@ -1,0 +1,38 @@
+rvmbs(1) -- RVM Bootstrap - Command to create a project directory with a configured .rvmrc into.
+================================================================================================
+
+## SYNOPSIS
+
+`rmvbs` `-d`|`--directory` <directory_name> `-i`|`--implementation` <ruby_implementation>  `-f`|`--force` `-v`|`--verbose`
+
+## DESCRIPTION
+
+**rvmbs** is a simple command-line tool for creating ruby project directorys 
+with a basic rvm configuration. By default (without any parameters) create
+and .rvmrc file in the current directory with the 1.9.2 implementationr and a
+gemset named equal to de current directory name. The .rvmrc file is also trusted.
+
+## OPTIONS
+
+* `-d`, `--directory` 
+  Directory name of the project.
+
+* `-i`, `--implementation`
+  The ruby implementation name, e.g., 1.9.2, jruby
+
+* `-f`, `--force`
+  Delete directory if already exist.
+
+* `-v`, `--verbose`
+  Prints extra info.
+
+## EXAMPLES
+
+Create a directory 'hello_world' and a gemset named 'hello_world' with implementation MRI 1.9.2 (default)
+  
+  $ rvmbs -d hello_world
+
+Create a directory 'dog' and a gemset named 'dog' with implementation jruby
+
+  $ rvmbs -d dog -i jruby
+
