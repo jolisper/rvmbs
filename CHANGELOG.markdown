@@ -1,3 +1,9 @@
+## 0.0.3 (March, 4, 2012)
+
+Features:
+
+  - Some internals improvements and better doc (man page)
+
 ## 0.0.2 (February, 24, 2012)
 
 Features:
