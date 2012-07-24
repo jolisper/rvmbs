@@ -1,6 +1,7 @@
 require "rvmbs/version"
 require "optparse"
 require "fileutils"
+require "yaml"
 
 module RVMBS
 
@@ -11,19 +12,21 @@ module RVMBS
       options = {}
       optsp = nil
 
+      load_config
+
       optparse = OptionParser.new do |opts|
         optsp = opts
         opts.banner = "RVM Bootstrap - Command to create a project directory with a configured .rvmrc into.
 
-Usage: rvmbs -d PROJECT_NAME [options]"
+Usage: rvmbs -d <PROJECT_NAME> [options]"
         
         # This define the directory name.
-        opts.on('-d', '--directory NAME', "The name of the project's directory.") do |name|
+        opts.on('-d', '--directory NAME', "The project's directory name.") do |name|
           options[:directory] = name
         end
          
         # This define the ruby implementation.
-        options[:implementation] = '1.9.2'
+        options[:implementation] = @implementation
         opts.on('-i', '--ruby-implementation NAME', "The name of the Ruby implementation.") do |name|
           options[:implementation] = name
         end
@@ -46,8 +49,15 @@ Usage: rvmbs -d PROJECT_NAME [options]"
           exit
         end
 
-      end.parse!(args)
-      
+      end
+
+      begin
+        optparse.parse!(args)
+      rescue OptionParser::MissingArgument
+        puts 'rvmbs: missing argument, -h for help'
+        exit
+      end
+
       # Directory must be set.
       if options[:directory] == nil
         puts optsp 
@@ -57,6 +67,15 @@ Usage: rvmbs -d PROJECT_NAME [options]"
         create_rvmrc(options)
         set_rvmrc_trusted(options, Dir.pwd)
       end
+    end
+
+    # Load config from user home dir.
+    def self.load_config
+      config_path = File.expand_path('~/.rvmbsrc')
+      config = YAML.load_file( config_path ) if File.exists? config_path
+  
+      # config values
+      @implementation = config['implementation']  || '1.9.2'
     end
 
     # Creates the directory.
