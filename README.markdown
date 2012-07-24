@@ -30,7 +30,7 @@ Config File
 
 rvmbs use a config file (yaml) on your home dir: '.rvmbsrc'
 
-    implementation: 1.9.3q
+    implementation: 1.9.3
 
 To Do
 -----
