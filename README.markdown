@@ -25,6 +25,13 @@ Generates a my_project directory with a trusted .rvmrc file contains:
   
 Run `rvmbs --help` or `gem man rvmbs` for more options.
 
+Config File
+-----------
+
+rvmbs use a config file (yaml) on your home dir: '.rvmbsrc'
+
+    implementation: 1.9.3q
+
 To Do
 -----
 
